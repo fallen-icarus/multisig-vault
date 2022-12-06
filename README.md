@@ -24,7 +24,7 @@ The vault can hold the reference scripts for spending, staking, and minting/burn
 Every token on Cardano contains a policy ID, a token name, and an amount. You can think of it as a triple like (policyID,tokenName,number). Using the policy ID and token name, you can find every address that hold a token of that policy ID and token name. For example, on mainnet you can use the [Koios api](https://api.koios.rest/#get-/asset_address_list). (They do not offer one for testnet so you will need to either use an explorer or the blockfrost api.)
 
 When looking at an address on cardano, you will see tokens like: 
-    1 4a152d8f80c0993262250b776766eab91223a72ab4c83217ccc23e44.4b6579
+`1 4a152d8f80c0993262250b776766eab91223a72ab4c83217ccc23e44.4b6579`
 This means 1 token with the policy id of 4a152d8f80c0993262250b776766eab91223a72ab4c83217ccc23e44 and the token name of 4b6579. The token name is the hexadecimal encoding of a word.
 
 For the vault, every vault will have a unique policy id. The vault token name will be the hexidecimal encoding for the word "Vault" (5661756c74) and the key token name will be the hexidecimal encoding for the word "Key" (4b6579). Knowing this a user can look at the tokens in their address and find the token with the token name for "Key". Then using that policy id and the token name for "Vault" the Koios api above can be used to find the vault address. As long as they maintain custody of the key token, the vault address will always be just a query away.
