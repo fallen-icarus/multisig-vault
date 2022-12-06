@@ -73,4 +73,4 @@ In order for the haskell program to properly compile the plutus scripts, you nee
 
 Now the program should properly compile the scripts. If you would like to use an IDE like VScode, launch it from the terminal while in the nix-shell. Everything should work as long as it was launched from within the nix-shell.
 
-The settings.json file has a template for how to format your desired vault settings. Then checkout the scripts directory to see some example actions.
+The [settings.json file](https://github.com/fallen-icarus/multisig-vault/blob/main/settings.json) has a template for how to format your desired vault settings. Then checkout the scripts directory to see some example actions. Everyone unique settings.json file will have a unique vault address.
