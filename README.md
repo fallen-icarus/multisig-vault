@@ -31,26 +31,26 @@ For the multisig-vault, every vault will have a unique policy id. The vault toke
 ## The On-Chain Logic
 
 ### Vault Spending
-There are two possible actions for the vault: Withdrawing and Closing.
+There are two possible actions for the vault: Withdrawing and Closing. There is a dedicated redeemer for each action.
 
-#### Withdrawing
-Withdrawing allows withdrawing any utxo inside the vault as long as all of the following are true:
+#### *Withdrawing*
+Allows withdrawing any utxo inside the vault as long as all of the following are true:
 1. The multisig threshold is met
 2. A utxo containing a reference script is not spent
 
-#### Closing
-Closing the vault allows spending any utxo inside the vault, including those with reference scripts, as long as the multisig threshold is met.
+#### *Closing*
+Allows spending any utxo inside the vault, including those with reference scripts, as long as the multisig threshold is met.
 
-#### Important Note
+#### *Important Note*
 As of right now, there is no check to make sure the vault token is not withdrawn from the vault. The vault token is deliberately stored with the spending reference script which protects it from being spent unless closing the vault. If reference scripts aren't used, care must be taken to not accidentally withdraw the vault token. A future version of the multisig vault may address this shortcoming.
 
-### Staking
+### Staking Policy
 All staking actions (withdrawing rewards,delegating,etc) are allowed as long as the multisig threshold is met.
 
-### Beacon
-There are two possible actions for the beacon script: Minting and Burning.
+### Beacon Policy
+There are two possible actions for the beacon script: Minting and Burning. There is a dedicated redeemer for each action.
 
-#### Minting Beacons
+#### *Minting Beacons*
 Minting beacons has the following requirements:
 1. The multisig threshold is met
 2. One vault token is minted
@@ -58,7 +58,7 @@ Minting beacons has the following requirements:
 4. The vault token must go to the proper vault address (it is hardcoded into the minting policy at compile time)
 5. One key token must go to every possible signer in the multisig settings (their payment pub keys are hardcoded into the minting policy at compile time)
 
-#### Burning Beacons
+#### *Burning Beacons*
 Burning beacons has the following requirements:
 1. The multisig threshold is met
 2. All outstanding beacon tokens are present to burn
