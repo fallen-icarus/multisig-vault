@@ -64,4 +64,13 @@ Burning beacons has the following requirements:
 2. All outstanding beacon tokens are present to burn
 
 ## Getting Started
+In order for the haskell program to properly compile the plutus scripts, you need to do the following steps:
+1. Clone the iohk [plutus-apps repository](https://github.com/input-output-hk/plutus-apps)
+2. `cd` into the plutus-apps repo
+3. checkout the `v1.0.0-alpha1` tag
+4. execute `nix-shell` from within the plutus-app repo (this may take a while)
+5. `cd` into this repo
+
+Now the program should properly compile the scripts. If you would like to use an IDE like VScode, launch it from the terminal while in the nix-shell. Everything should work as long as it was launched from within the nix-shell.
+
 The settings.json file has a template for how to format your desired vault settings. Then checkout the scripts directory to see some example actions.
