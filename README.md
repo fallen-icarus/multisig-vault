@@ -1,4 +1,5 @@
 # On-Chain Multisig Vault
+[Simple scripts](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/simple-scripts.md) are probably more appropriate for this application. However this was a thought experiment for "how could it be done using plutus".
 
 ## Features
 1. Unique vault address for every multisig
